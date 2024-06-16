@@ -141,6 +141,9 @@ on boot
     chmod 0664 /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/min_freq
     chown root system /sys/class/devfreq/soc:qcom,cpu4-cpu-ddr-latfloor/min_freq
 
+# Enable Double Tap to Wake
+    write /sys/touchpanel/double_tap 1
+
 # some priv-apps of SPR bind mount to TMB priv-apps
 on post-fs-data && property:ro.csc.sales_code=TMB
     umount /system/carrier
